@@ -35,12 +35,12 @@ public class Loginpage implements ActionListener {
         fr.add(pan2);
 
         //Fonts
-        fon1=new Font("arial",Font.BOLD,25);
-        fon2=new Font("arial",Font.BOLD,18);
+        fon1=new Font("arial",Font.BOLD,27);
+        fon2=new Font("arial",Font.BOLD,20);
 
         //Heading
         lbl_heading=new JLabel("USER LOGIN");
-        lbl_heading.setFont(fon1);
+        lbl_heading.setFont(fon2);
         lbl_heading.setForeground(Color.BLACK);
         lbl_heading.setBounds(150,10,250,30);
         pan.add(lbl_heading);

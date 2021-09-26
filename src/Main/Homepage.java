@@ -14,7 +14,7 @@ public class Homepage implements ActionListener {
     JFrame fr;
     JPanel pan, pan2;
     JLabel lbl_img, lbl_img1, lbl_club, lbl_cid, lbl_txt;
-    JButton btn_addstd, btn_update, btn_logout;
+    JButton btn_addstd, btn_Update, btn_Logout;
     JTextField txt_id;
     ImageIcon image_premier, image_background;
     Font fon1, fon2;
@@ -74,15 +74,15 @@ public class Homepage implements ActionListener {
         btn_addstd.addActionListener(this);
         pan2.add(btn_addstd);
 
-        btn_logout = new JButton("Logout");
-        btn_logout.setFont(fon1);
-        btn_logout.setForeground(Color.white);
-        btn_logout.setBounds(665, 10, 120, 40);
-        btn_logout.setBackground(new Color(54, 16, 58));
-        pan.add(btn_logout);
+        btn_Logout = new JButton("Logout");
+        btn_Logout.setFont(fon1);
+        btn_Logout.setForeground(Color.white);
+        btn_Logout.setBounds(665, 10, 120, 40);
+        btn_Logout.setBackground(new Color(54, 16, 58));
+        pan.add(btn_Logout);
 
 
-        btn_logout.addActionListener(new ActionListener() {
+        btn_Logout.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 new Loginpage();
                 fr.dispose();
@@ -90,12 +90,12 @@ public class Homepage implements ActionListener {
         });
 
         //Image
-        image_premier = new ImageIcon(getClass().getResource("Stats.jpg"));
+        image_premier = new ImageIcon(getClass().getResource(""));
         lbl_img = new JLabel(image_premier);
         lbl_img.setBounds(0, 0, 798, 500);
         pan.add(lbl_img);
 
-        image_background = new ImageIcon(getClass().getResource("Background.jpg"));
+        image_background = new ImageIcon(getClass().getResource("rakshya.png"));
         lbl_img1 = new JLabel(image_background);
         lbl_img1.setBounds(0, 495, 920, 600);
         pan.add(lbl_img1);
@@ -116,14 +116,11 @@ public class Homepage implements ActionListener {
         std.setFont(fon1);
         std.setRowHeight(50);
         std.setBackground(new Color(211,244,252));
-        model.addColumn("MP");
-        model.addColumn("W");
-        model.addColumn("D");
-        model.addColumn("L");
-        model.addColumn("GF");
-        model.addColumn("GA");
-        model.addColumn("GD");
-        model.addColumn("Pts");
+        model.addColumn("MAT");
+        model.addColumn("Runs");
+        model.addColumn("Average");
+        model.addColumn("Century");
+        model.addColumn("Half Century");
         JTableHeader header = std.getTableHeader();
         header.setFont(fon1);
         header.setBackground(Color.white);
@@ -131,7 +128,7 @@ public class Homepage implements ActionListener {
         std.getTableHeader().setPreferredSize(new Dimension(30,45));
         try {
             DbConnection db=new DbConnection();
-            String query="select * from standings";
+            String query="select * from player_stats";
             ResultSet rs=db.select(query);
             DefaultTableModel model=(DefaultTableModel)std.getModel();
             model.setRowCount(0);
@@ -140,8 +137,7 @@ public class Homepage implements ActionListener {
             while(rs.next()){
                 System.out.println(rs.getString(1)+" "+rs.getString(2));
                 model.addRow(new Object[]{ rs.getString(2),rs.getString(3),
-                        rs.getString(4),rs.getString(5), rs.getString(6),rs.getString(7),
-                        rs.getString(8),rs.getString(9)});
+                        rs.getString(4),rs.getString(5)});
             }
 
         } catch (Exception e) {
@@ -157,7 +153,7 @@ public class Homepage implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource()==btn_update){
+        if (e.getSource()==btn_Update){
             standing();
         }
         if (e.getSource() == btn_addstd) {

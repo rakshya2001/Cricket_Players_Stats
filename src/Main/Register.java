@@ -15,7 +15,7 @@ public class Register implements ActionListener {
     JTextField txt_fname, txt_lname, txt_email;
     JPasswordField txt_pass, txt_cpass;
     JComboBox<String> ComboBox;
-    JButton btn_register, btn_cancel;
+    JButton btn_Register, btn_Cancel;
     Font fon1, fon2;
 
     public Register() {
@@ -118,17 +118,17 @@ public class Register implements ActionListener {
 
 
         //Buttons
-        btn_register = new JButton("Sign Up");
-        btn_register.setFont(fon1);
-        btn_register.setBounds(70, 400, 150, 40);
-        btn_register.addActionListener(this);
-        pan.add(btn_register);
+        btn_Register = new JButton("Sign Up");
+        btn_Register.setFont(fon2);
+        btn_Register.setBounds(70, 400, 150, 40);
+        btn_Register.addActionListener(this);
+        pan.add(btn_Register);
 
-        btn_cancel = new JButton("Cancel");
-        btn_cancel.setFont(fon1);
-        btn_cancel.setBounds(250, 400, 150, 40);
-        btn_cancel.addActionListener(this);
-        pan.add(btn_cancel);
+        btn_Cancel = new JButton("Cancel");
+        btn_Cancel.setFont(fon2);
+        btn_Cancel.setBounds(250, 400, 150, 40);
+        btn_Cancel.addActionListener(this);
+        pan.add(btn_Cancel);
 
 
         //Image
@@ -157,20 +157,20 @@ public class Register implements ActionListener {
         String cpass = txt_cpass.getText();
         String gender = (String) ComboBox.getSelectedItem();
 
-        if (e.getSource() == btn_register) {
+        if (e.getSource() == btn_Register) {
             DbConnection db = new DbConnection();
             String query = "insert into usr_tbl(fullname,lastname,username,pass,cpass,gender) " +
                     "values('" + fulname + "','" + lastname + "','" + username + "','" + pass + "','" + cpass + "','"+gender+"')";
             int ans = db.insert(query);
             if (ans > 0) {
-                JOptionPane.showMessageDialog(fr, "Registration Completed");
+                JOptionPane.showMessageDialog(fr, "Registration is completed successfully");
                 fr.dispose();
                 new Loginpage();
             }
 
         }
 
-        if (e.getSource()==btn_cancel){
+        if (e.getSource()==btn_Cancel){
             fr.dispose();
             new Loginpage();
         }
