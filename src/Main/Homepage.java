@@ -13,7 +13,7 @@ import javax.swing.table.JTableHeader;
 public class Homepage implements ActionListener {
     JFrame fr;
     JPanel pan, pan2;
-    JLabel lbl_img1,lbl_pid, lbl_txt;
+    JLabel lbl_img1,lbl_txt;
     JButton btn_addstd, btn_Update, btn_Logout;
     JTextField txt_id;
     ImageIcon  image_background;
@@ -30,7 +30,7 @@ public class Homepage implements ActionListener {
         fr.add(pan);
 
         pan2 = new JPanel();
-        pan2.setBounds(200, 550, 300, 100);
+        pan2.setBounds(500, 220, 300, 100);
         pan2.setBackground(Color.white);
         pan2.setBorder(new LineBorder(new Color(0, 0, 0),4));
         pan2.setLayout(null);
@@ -42,13 +42,6 @@ public class Homepage implements ActionListener {
 
 
         //Headings
-
-        lbl_pid = new JLabel("P.Id");
-        lbl_pid.setFont(fon1);
-        lbl_pid.setForeground(Color.darkGray);
-        lbl_pid.setBounds(10, 220, 100, 20);
-        pan.add(lbl_pid);
-
         lbl_txt = new JLabel("Insert Your Id ");
         lbl_txt.setFont(fon1);
         lbl_txt.setForeground(Color.BLACK);
@@ -58,9 +51,9 @@ public class Homepage implements ActionListener {
         //Text field
         txt_id = new JTextField();
         txt_id.setFont(fon1);
-        txt_id.setBounds(230, 595, 70, 30);
+        txt_id.setBounds(30, 50, 70, 30);
         txt_id.setBorder(new LineBorder(new Color(0, 0, 0),1));
-        pan.add(txt_id);
+        pan2.add(txt_id);
 
         //Buttons
         btn_addstd = new JButton("Add Stats");
@@ -73,7 +66,7 @@ public class Homepage implements ActionListener {
         btn_Logout.setFont(fon1);
         btn_Logout.setForeground(Color.white);
         btn_Logout.setBounds(665, 10, 120, 40);
-        btn_Logout.setBackground(new Color(54, 16, 58));
+        btn_Logout.setBackground(new Color(216, 33, 80));
         pan.add(btn_Logout);
 
 
@@ -85,26 +78,27 @@ public class Homepage implements ActionListener {
         });
 
         //Image
+
+
+
+        Stats();
         image_background = new ImageIcon(getClass().getResource("rakshya.png"));
         lbl_img1 = new JLabel(image_background);
         lbl_img1.setBounds(0, 0, 850, 815);
         pan.add(lbl_img1);
 
-
-        standing();
-
-        fr.setSize(850, 815);
+        fr.setSize(850, 750);
         fr.setLayout(null);
         fr.setVisible(true);
 
     }
-    public void standing(){
+    public void Stats(){
         model= new DefaultTableModel();
         std= new JTable(model);
         fon1=new Font("Dialog", Font.BOLD, 22);
         fon1=new Font("Serif", Font.BOLD, 18);
         std.setFont(fon1);
-        std.setRowHeight(50);
+        std.setRowHeight(65);
         std.setBackground(new Color(211,244,252));
         model.addColumn("MAT");
         model.addColumn("Runs");
@@ -115,26 +109,25 @@ public class Homepage implements ActionListener {
         header.setFont(fon1);
         header.setBackground(Color.white);
         header.setForeground(Color.darkGray);
-        std.getTableHeader().setPreferredSize(new Dimension(30,45));
+        std.getTableHeader().setPreferredSize(new Dimension(30,53));
         try {
             DbConnection db=new DbConnection();
-            String query="select * from player_stats";
+            String query="select * from Player_stats";
             ResultSet rs=db.select(query);
             DefaultTableModel model=(DefaultTableModel)std.getModel();
             model.setRowCount(0);
             int i=0;
 
             while(rs.next()){
-                System.out.println(rs.getString(1)+" "+rs.getString(2));
                 model.addRow(new Object[]{ rs.getString(2),rs.getString(3),
-                        rs.getString(4),rs.getString(5)});
+                        rs.getString(4),rs.getString(5),rs.getString(6)});
             }
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         JScrollPane pg = new JScrollPane(std);
-        pg.setBounds(285,200,515,298);
+        pg.setBounds(285,320,515,380);
         pan.add(pg);
     }
 
@@ -144,7 +137,7 @@ public class Homepage implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==btn_Update){
-            standing();
+            Stats();
         }
         if (e.getSource() == btn_addstd) {
             if (txt_id.getText().length()==0){

@@ -14,8 +14,8 @@ public class Loginpage implements ActionListener {
     JFrame fr;
     JPanel pan, pan2;
     ImageIcon background;
-    JLabel lbl_heading,lbl_account,lbl_username,lbl_password, lbl_img;
-    JTextField txt_username;
+    JLabel lbl_heading,lbl_account,lbl_Username,lbl_password, lbl_img;
+    JTextField text_Username;
     JPasswordField txt_password;
     JButton btn_login,btn_exit,btn_reg;
     Font fon1,fon2;
@@ -46,11 +46,11 @@ public class Loginpage implements ActionListener {
         pan.add(lbl_heading);
 
         //Label
-        lbl_username=new JLabel("Username:");
-        lbl_username.setFont(fon1);
-        lbl_username.setForeground(Color.BLACK);
-        lbl_username.setBounds(45,90,130,40);
-        pan.add(lbl_username);
+        lbl_Username= new JLabel("Username:");
+        lbl_Username.setFont(fon1);
+        lbl_Username.setForeground(Color.BLACK);
+        lbl_Username.setBounds(45,90,130,40);
+        pan.add(lbl_Username);
 
 
         //label for password
@@ -72,10 +72,10 @@ public class Loginpage implements ActionListener {
         txt_password.setBounds(50,250,290,40);
         pan.add(txt_password);
 
-        txt_username=new JTextField();
-        txt_username.setFont(fon2);
-        txt_username.setBounds(50,130,290,40);
-        pan.add(txt_username);
+        text_Username=new JTextField();
+        text_Username.setFont(fon2);
+        text_Username.setBounds(50,130,290,40);
+        pan.add(text_Username);
 
         //Buttons
         btn_login=new JButton("Login");
@@ -99,7 +99,7 @@ public class Loginpage implements ActionListener {
         pan.add(btn_reg);
 
         //Image
-        background = new ImageIcon(getClass().getResource("bg.png"));
+        background = new ImageIcon(getClass().getResource("rakshya.png"));
         lbl_img = new JLabel(background);
         lbl_img.setBounds(0, 0, 700, 700);
         pan2.add(lbl_img);
@@ -127,9 +127,9 @@ public class Loginpage implements ActionListener {
         }
 
         if(e.getSource()==btn_login){
-            String username=txt_username.getText();
-            String passw=txt_password.getText();
-            String query="select * from usr_tbl where username='"+username+"'and pass='"+passw+"'";
+            String Username=lbl_Username.getText();
+            String Password=txt_password.getText();
+            String query="select * from admin_tbl where Username='"+Username+"'and password='"+Password+"'";
             DbConnection db=new DbConnection();
             ResultSet rs=db.select(query);
             try {

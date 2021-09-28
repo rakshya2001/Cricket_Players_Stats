@@ -72,46 +72,46 @@ public class Register implements ActionListener {
         lbl_pass.setBounds(25, 200, 150, 40);
         pan.add(lbl_pass);
 
-        lbl_cpass = new JLabel("Confirm Password:");
-        lbl_cpass.setFont(fon1);
-        lbl_cpass.setForeground(Color.BLACK);
-        lbl_cpass.setBounds(15, 250, 200, 40);
-        pan.add(lbl_cpass);
+        lbl_Cpassword = new JLabel("Confirm Password:");
+        lbl_Cpassword.setFont(fon1);
+        lbl_Cpassword.setForeground(Color.BLACK);
+        lbl_Cpassword.setBounds(15, 250, 200, 40);
+        pan.add(lbl_Cpassword);
 
-        lbl_gender = new JLabel("Gender:");
-        lbl_gender.setFont(fon1);
-        lbl_gender.setForeground(Color.BLACK);
-        lbl_gender.setBounds(15, 300, 200, 40);
-        pan.add(lbl_gender);
+        lbl_Gender = new JLabel("Gender:");
+        lbl_Gender.setFont(fon1);
+        lbl_Gender.setForeground(Color.BLACK);
+        lbl_Gender.setBounds(15, 300, 200, 40);
+        pan.add(lbl_Gender);
 
 
         //TextField
-        txt_fname = new JTextField();
-        txt_fname.setFont(fon2);
-        txt_fname.setBounds(220, 50, 200, 40);
-        pan.add(txt_fname);
+        txt_First_Nameame = new JTextField();
+        txt_First_Nameame.setFont(fon2);
+        txt_First_Nameame.setBounds(220, 50, 200, 40);
+        pan.add(txt_First_Nameame);
 
-        txt_lname = new JTextField();
-        txt_lname.setFont(fon2);
-        txt_lname.setBounds(220, 100, 200, 40);
-        pan.add(txt_lname);
+        txt_Last_name = new JTextField();
+        txt_Last_name.setFont(fon2);
+        txt_Last_name.setBounds(220, 100, 200, 40);
+        pan.add(txt_Last_name);
 
         txt_email = new JTextField();
         txt_email.setFont(fon2);
         txt_email.setBounds(220, 150, 200, 40);
         pan.add(txt_email);
 
-        txt_pass = new JPasswordField();
-        txt_pass.setFont(fon2);
-        txt_pass.setBounds(220, 200, 200, 40);
-        pan.add(txt_pass);
+        txt_Password = new JPasswordField();
+        txt_Password.setFont(fon2);
+        txt_Password.setBounds(220, 200, 200, 40);
+        pan.add(txt_Password);
 
-        txt_cpass = new JPasswordField();
-        txt_cpass.setFont(fon2);
-        txt_cpass.setBounds(220, 250, 200, 40);
-        pan.add(txt_cpass);
+        txt_Cpassword = new JPasswordField();
+        txt_Cpassword.setFont(fon2);
+        txt_Cpassword.setBounds(220, 250, 200, 40);
+        pan.add(txt_Cpassword);
 
-        ComboBox=new JComboBox<String>(gender);
+        ComboBox=new JComboBox<String>(Gender);
         ComboBox.setFont(fon2);
         ComboBox.setBounds(220, 300,200 , 40);
         pan.add(ComboBox);
@@ -132,10 +132,6 @@ public class Register implements ActionListener {
 
 
         //Image
-        background = new ImageIcon(getClass().getResource("bg.png"));
-        lbl_img = new JLabel(background);
-        lbl_img.setBounds(0, 0, 700, 700);
-        pan2.add(lbl_img);
 
 
         fr.setSize(700, 700);
@@ -150,17 +146,17 @@ public class Register implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String fulname = txt_fname.getText();
-        String lastname = txt_lname.getText();
-        String username = txt_email.getText();
-        String pass = txt_pass.getText();
-        String cpass = txt_cpass.getText();
-        String gender = (String) ComboBox.getSelectedItem();
+        String First_Name = txt_fname.getText();
+        String Last_Name = txt_lname.getText();
+        String Username = txt_email.getText();
+        String Password = txt_pass.getText();
+        String Cpassword = txt_cpass.getText();
+        String Gender = (String) ComboBox.getSelectedItem();
 
         if (e.getSource() == btn_Register) {
             DbConnection db = new DbConnection();
-            String query = "insert into usr_tbl(fullname,lastname,username,pass,cpass,gender) " +
-                    "values('" + fulname + "','" + lastname + "','" + username + "','" + pass + "','" + cpass + "','"+gender+"')";
+            String query = "insert into admin_tbl(First_Name,Last_Name,Username,Password,Cpassword,Gender) " +
+                    "values('" + First_Name + "','" + Last_Name + "','" + Username + "','" + Password + "','" + Cpassword + "','"+Gender+"')";
             int ans = db.insert(query);
             if (ans > 0) {
                 JOptionPane.showMessageDialog(fr, "Registration is completed successfully");
