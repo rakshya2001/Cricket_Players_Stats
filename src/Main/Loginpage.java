@@ -127,9 +127,9 @@ public class Loginpage implements ActionListener {
         }
 
         if(e.getSource()==btn_login){
-            String Username=lbl_Username.getText();
+            String Username=text_Username.getText();
             String Password=txt_password.getText();
-            String query="select * from admin_tbl where Username='"+Username+"'and password='"+Password+"'";
+            String query="select * from admin_tbl where Username='"+Username+"'and Password='"+Password+"'";
             DbConnection db=new DbConnection();
             ResultSet rs=db.select(query);
             try {
