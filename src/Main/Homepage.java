@@ -13,10 +13,10 @@ import javax.swing.table.JTableHeader;
 public class Homepage implements ActionListener {
     JFrame fr;
     JPanel pan, pan2;
-    JLabel lbl_img, lbl_img1, lbl_club, lbl_cid, lbl_txt;
+    JLabel lbl_img1,lbl_pid, lbl_txt;
     JButton btn_addstd, btn_Update, btn_Logout;
     JTextField txt_id;
-    ImageIcon image_premier, image_background;
+    ImageIcon  image_background;
     Font fon1, fon2;
     DefaultTableModel model;
     JTable std;
@@ -42,22 +42,17 @@ public class Homepage implements ActionListener {
 
 
         //Headings
-        lbl_club = new JLabel("Club");
-        lbl_club.setFont(fon1);
-        lbl_club.setForeground(Color.darkGray);
-        lbl_club.setBounds(70, 220, 100, 20);
-        pan.add(lbl_club);
 
-        lbl_cid = new JLabel("C.Id");
-        lbl_cid.setFont(fon1);
-        lbl_cid.setForeground(Color.darkGray);
-        lbl_cid.setBounds(10, 220, 100, 20);
-        pan.add(lbl_cid);
+        lbl_pid = new JLabel("P.Id");
+        lbl_pid.setFont(fon1);
+        lbl_pid.setForeground(Color.darkGray);
+        lbl_pid.setBounds(10, 220, 100, 20);
+        pan.add(lbl_pid);
 
-        lbl_txt = new JLabel("Insert Id Here");
+        lbl_txt = new JLabel("Insert Your Id ");
         lbl_txt.setFont(fon1);
         lbl_txt.setForeground(Color.BLACK);
-        lbl_txt.setBounds(75, 10, 150, 20);
+        lbl_txt.setBounds(25, 10, 200, 30);
         pan2.add(lbl_txt);
 
         //Text field
@@ -68,7 +63,7 @@ public class Homepage implements ActionListener {
         pan.add(txt_id);
 
         //Buttons
-        btn_addstd = new JButton("Add Standings");
+        btn_addstd = new JButton("Add Stats");
         btn_addstd.setFont(fon2);
         btn_addstd.setBounds(125, 40, 150, 40);
         btn_addstd.addActionListener(this);
@@ -90,20 +85,15 @@ public class Homepage implements ActionListener {
         });
 
         //Image
-        image_premier = new ImageIcon(getClass().getResource(""));
-        lbl_img = new JLabel(image_premier);
-        lbl_img.setBounds(0, 0, 798, 500);
-        pan.add(lbl_img);
-
         image_background = new ImageIcon(getClass().getResource("rakshya.png"));
         lbl_img1 = new JLabel(image_background);
-        lbl_img1.setBounds(0, 495, 920, 600);
+        lbl_img1.setBounds(0, 0, 850, 815);
         pan.add(lbl_img1);
 
 
         standing();
 
-        fr.setSize(815, 750);
+        fr.setSize(850, 815);
         fr.setLayout(null);
         fr.setVisible(true);
 
