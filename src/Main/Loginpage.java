@@ -60,7 +60,7 @@ public class Loginpage implements ActionListener {
         lbl_password.setBounds(25,245,125,40);
         pan.add(lbl_password);
 
-        lbl_account=new JLabel("Create New Account?");
+        lbl_account=new JLabel("Create A New Account?");
         lbl_account.setFont(f2);
         lbl_account.setForeground(Color.BLACK);
         lbl_account.setBounds(30,430,210,40);
