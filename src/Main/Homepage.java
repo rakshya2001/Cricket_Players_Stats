@@ -17,7 +17,7 @@ public class Homepage implements ActionListener {
     JButton btn_addstd, btn_Update, btn_Logout;
     JTextField txt_id;
     ImageIcon  image_background;
-    Font fon1, fon2;
+    Font f1, f2;
     DefaultTableModel model;
     JTable std;
 
@@ -32,38 +32,38 @@ public class Homepage implements ActionListener {
         pan2 = new JPanel();
         pan2.setBounds(500, 220, 300, 100);
         pan2.setBackground(Color.white);
-        pan2.setBorder(new LineBorder(new Color(0, 0, 0),4));
+        pan2.setBorder(new LineBorder(new Color(246, 99, 54),4));
         pan2.setLayout(null);
         pan.add(pan2);
 
         //Fonts
-        fon1 = new Font("arial", Font.BOLD, 22);
-        fon2 = new Font("arial", Font.BOLD, 15);
+        f1 = new Font("arial", Font.BOLD, 22);
+        f2 = new Font("arial", Font.BOLD, 15);
 
 
         //Headings
-        lbl_txt = new JLabel("Insert Your Id ");
-        lbl_txt.setFont(fon1);
+        lbl_txt = new JLabel("Insert Your Player ID ");
+        lbl_txt.setFont(f2);
         lbl_txt.setForeground(Color.BLACK);
-        lbl_txt.setBounds(25, 10, 200, 30);
+        lbl_txt.setBounds(25, 10, 210, 30);
         pan2.add(lbl_txt);
 
         //Text field
         txt_id = new JTextField();
-        txt_id.setFont(fon1);
+        txt_id.setFont(f1);
         txt_id.setBounds(30, 50, 70, 30);
         txt_id.setBorder(new LineBorder(new Color(0, 0, 0),1));
         pan2.add(txt_id);
 
         //Buttons
         btn_addstd = new JButton("Add Stats");
-        btn_addstd.setFont(fon2);
+        btn_addstd.setFont(f2);
         btn_addstd.setBounds(125, 40, 150, 40);
         btn_addstd.addActionListener(this);
         pan2.add(btn_addstd);
 
         btn_Logout = new JButton("Logout");
-        btn_Logout.setFont(fon1);
+        btn_Logout.setFont(f1);
         btn_Logout.setForeground(Color.white);
         btn_Logout.setBounds(665, 10, 120, 40);
         btn_Logout.setBackground(new Color(216, 33, 80));
@@ -95,9 +95,9 @@ public class Homepage implements ActionListener {
     public void Stats(){
         model= new DefaultTableModel();
         std= new JTable(model);
-        fon1=new Font("Dialog", Font.BOLD, 22);
-        fon1=new Font("Serif", Font.BOLD, 18);
-        std.setFont(fon1);
+        f1=new Font("Dialog", Font.BOLD, 22);
+        f1=new Font("Serif", Font.BOLD, 18);
+        std.setFont(f1);
         std.setRowHeight(65);
         std.setBackground(new Color(211,244,252));
         model.addColumn("MAT");
@@ -106,7 +106,7 @@ public class Homepage implements ActionListener {
         model.addColumn("Century");
         model.addColumn("Half Century");
         JTableHeader header = std.getTableHeader();
-        header.setFont(fon1);
+        header.setFont(f1);
         header.setBackground(Color.white);
         header.setForeground(Color.darkGray);
         std.getTableHeader().setPreferredSize(new Dimension(30,53));
