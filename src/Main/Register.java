@@ -72,46 +72,46 @@ public class Register implements ActionListener {
         lbl_pass.setBounds(25, 200, 150, 40);
         pan.add(lbl_pass);
 
-        lbl_Cpassword = new JLabel("Confirm Password:");
-        lbl_Cpassword.setFont(fon1);
-        lbl_Cpassword.setForeground(Color.BLACK);
-        lbl_Cpassword.setBounds(15, 250, 200, 40);
-        pan.add(lbl_Cpassword);
+        lbl_cpass = new JLabel("Confirm Password:");
+        lbl_cpass.setFont(fon1);
+        lbl_cpass.setForeground(Color.BLACK);
+        lbl_cpass.setBounds(15, 250, 200, 40);
+        pan.add(lbl_cpass);
 
-        lbl_Gender = new JLabel("Gender:");
-        lbl_Gender.setFont(fon1);
-        lbl_Gender.setForeground(Color.BLACK);
-        lbl_Gender.setBounds(15, 300, 200, 40);
-        pan.add(lbl_Gender);
+        lbl_gender = new JLabel("Gender:");
+        lbl_gender.setFont(fon1);
+        lbl_gender.setForeground(Color.BLACK);
+        lbl_gender.setBounds(15, 300, 200, 40);
+        pan.add(lbl_gender);
 
 
         //TextField
-        txt_First_Nameame = new JTextField();
-        txt_First_Nameame.setFont(fon2);
-        txt_First_Nameame.setBounds(220, 50, 200, 40);
-        pan.add(txt_First_Nameame);
+        txt_fname = new JTextField();
+        txt_fname.setFont(fon2);
+        txt_fname.setBounds(220, 50, 200, 40);
+        pan.add(txt_fname);
 
-        txt_Last_name = new JTextField();
-        txt_Last_name.setFont(fon2);
-        txt_Last_name.setBounds(220, 100, 200, 40);
-        pan.add(txt_Last_name);
+        txt_lname = new JTextField();
+        txt_lname.setFont(fon2);
+        txt_lname.setBounds(220, 100, 200, 40);
+        pan.add(txt_lname);
 
         txt_email = new JTextField();
         txt_email.setFont(fon2);
         txt_email.setBounds(220, 150, 200, 40);
         pan.add(txt_email);
 
-        txt_Password = new JPasswordField();
-        txt_Password.setFont(fon2);
-        txt_Password.setBounds(220, 200, 200, 40);
-        pan.add(txt_Password);
+        txt_pass = new JPasswordField();
+        txt_pass.setFont(fon2);
+        txt_pass.setBounds(220, 200, 200, 40);
+        pan.add(txt_pass);
 
-        txt_Cpassword = new JPasswordField();
-        txt_Cpassword.setFont(fon2);
-        txt_Cpassword.setBounds(220, 250, 200, 40);
-        pan.add(txt_Cpassword);
+        txt_cpass = new JPasswordField();
+        txt_cpass.setFont(fon2);
+        txt_cpass.setBounds(220, 250, 200, 40);
+        pan.add(txt_cpass);
 
-        ComboBox=new JComboBox<String>(Gender);
+        ComboBox=new JComboBox<String>(gender);
         ComboBox.setFont(fon2);
         ComboBox.setBounds(220, 300,200 , 40);
         pan.add(ComboBox);

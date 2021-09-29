@@ -39,31 +39,31 @@ public class Stats implements ActionListener {
         lbl_MAT = new JLabel("MAT");
         lbl_MAT.setFont(fon1);
         lbl_MAT.setForeground(Color.darkGray);
-        lbl_MAT.setBounds(150, 195, 100, 20);
+        lbl_MAT.setBounds(50, 195, 100, 20);
         pan.add(lbl_MAT);
 
         lbl_Runs = new JLabel("Runs");
         lbl_Runs.setFont(fon1);
         lbl_Runs.setForeground(Color.darkGray);
-        lbl_Runs.setBounds(240, 195, 100, 20);
+        lbl_Runs.setBounds(200, 195, 100, 20);
         pan.add(lbl_Runs);
 
         lbl_Average = new JLabel("Average");
         lbl_Average.setFont(fon1);
         lbl_Average.setForeground(Color.darkGray);
-        lbl_Average.setBounds(320, 195, 100, 20);
+        lbl_Average.setBounds(350, 195, 100, 20);
         pan.add(lbl_Average);
 
         lbl_Century = new JLabel("Century");
         lbl_Century.setFont(fon1);
         lbl_Century.setForeground(Color.darkGray);
-        lbl_Century.setBounds(400, 195, 100, 20);
+        lbl_Century.setBounds(500, 195, 100, 20);
         pan.add(lbl_Century);
 
         lbl_Half_Century = new JLabel("Half Century");
         lbl_Half_Century.setFont(fon1);
         lbl_Half_Century.setForeground(Color.darkGray);
-        lbl_Half_Century.setBounds(460, 195, 100, 20);
+        lbl_Half_Century.setBounds(650, 195, 150, 20);
         pan.add(lbl_Half_Century);
 
         //Buttons
@@ -90,35 +90,35 @@ public class Stats implements ActionListener {
                 //TextField
                 txt_MAT = new JTextField(rs.getString("MAT"));
                 txt_MAT.setFont(fon2);
-                txt_MAT.setBounds(140, 230, 40, 25);
+                txt_MAT.setBounds(50, 230, 40, 25);
                 txt_MAT.setBackground(new Color(245, 254, 255));
                 txt_MAT.setBorder(new LineBorder(new Color(0, 0, 0),3));
                 pan.add(txt_MAT);
 
                 txt_Runs = new JTextField(rs.getString("Runs"));
                 txt_Runs.setFont(fon2);
-                txt_Runs.setBounds(235, 230, 40, 25);
+                txt_Runs.setBounds(200, 230, 40, 25);
                 txt_Runs.setBackground(new Color(245, 254, 255));
                 txt_Runs.setBorder(new LineBorder(new Color(0, 0, 0),3));
                 pan.add(txt_Runs);
 
                 txt_Average = new JTextField(rs.getString("Average"));
                 txt_Average.setFont(fon2);
-                txt_Average.setBounds(315, 230, 40, 25);
+                txt_Average.setBounds(350, 230, 40, 25);
                 txt_Average.setBackground(new Color(245, 254, 255));
                 txt_Average.setBorder(new LineBorder(new Color(0, 0, 0),3));
                 pan.add(txt_Average);
 
                 txt_Century = new JTextField(rs.getString("Century"));
                 txt_Century.setFont(fon2);
-                txt_Century.setBounds(390, 230, 40, 25);
+                txt_Century.setBounds(500, 230, 40, 25);
                 txt_Century.setBackground(new Color(245, 254, 255));
                 txt_Century.setBorder(new LineBorder(new Color(0, 0, 0),3));
                 pan.add(txt_Century);
 
                 txt_Half_Century = new JTextField(rs.getString("Half_Century"));
                 txt_Half_Century.setFont(fon2);
-                txt_Half_Century.setBounds(460, 230, 40, 25);
+                txt_Half_Century.setBounds(650, 230, 40, 25);
                 txt_Half_Century.setBackground(new Color(245, 254, 255));
                 txt_Half_Century.setBorder(new LineBorder(new Color(0, 0, 0),3));
                 pan.add(txt_Half_Century);

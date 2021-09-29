@@ -99,7 +99,7 @@ public class Loginpage implements ActionListener {
         pan.add(btn_reg);
 
         //Image
-        background = new ImageIcon(getClass().getResource("rakshya.png"));
+        background = new ImageIcon(getClass().getResource("Background1.jpg"));
         lbl_img = new JLabel(background);
         lbl_img.setBounds(0, 0, 700, 700);
         pan2.add(lbl_img);
