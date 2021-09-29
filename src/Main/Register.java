@@ -159,7 +159,7 @@ public class Register implements ActionListener {
                     "values('" + First_Name + "','" + Last_Name + "','" + Username + "','" + Password + "','" + Cpassword + "','"+Gender+"')";
             int ans = db.insert(query);
             if (ans > 0) {
-                JOptionPane.showMessageDialog(fr, "Registration is completed successfully");
+                JOptionPane.showMessageDialog(fr, "Registration has been completed successfully");
                 fr.dispose();
                 new Loginpage();
             }

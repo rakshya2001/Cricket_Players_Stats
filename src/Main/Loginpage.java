@@ -137,7 +137,7 @@ public class Loginpage implements ActionListener {
 
                 }
                 else{
-                    JOptionPane.showMessageDialog(fr,"Invalid Username and Password");
+                    JOptionPane.showMessageDialog(fr,"Given Username and Password is Invalid");
                 }
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
